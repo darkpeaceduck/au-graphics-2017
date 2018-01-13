@@ -1,0 +1,5 @@
+include_directories(.)
+#add_executable(deferred mbrot.c sdr.c image_ppm.c)
+add_executable(deferred main.cpp util.cpp window.cpp )
+include_directories( ${OPENGL_INCLUDE_DIRS} )
+target_link_libraries(deferred ${OPENGL_LIBRARIES} ${GLFW_library} ${Assimp_library})
