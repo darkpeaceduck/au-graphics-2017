@@ -9,7 +9,7 @@ function build() {
         BUILD_DIR=$1
     fi
     
-    git submodule update --recursive
+    git submodule update --init --recursive
     cd lib/glui
     make
     cd ../..
