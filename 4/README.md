@@ -26,3 +26,5 @@ $ ./cmd.sh deps
 
 WASD + Mouse
 
+M - change mode (0 - compose, 1 - hbao only)
+
