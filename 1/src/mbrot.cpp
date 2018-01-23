@@ -46,6 +46,7 @@ int main(int argc, char **argv) {
 	 rad_spinner->set_speed(0.1f);
 
 	glui->set_main_gfx_window(win);
+	GLUI_Master.auto_set_viewport();
 
 	glutDisplayFunc(draw);
 	glutIdleFunc(idle_handler);
@@ -171,5 +172,6 @@ void mouse_handler(int x, int y) {
 
 	px = fx;
 	py = fy;
+	draw();
 }
 }
