@@ -155,24 +155,7 @@ void bn_handler(int bn, int state, int x, int y) {
 	} else if(which_bn == 4) {
 		scale *= 1 + zoom_factor * 2.0;;
 	}
-}
-
-void mouse_handler2(int bn, int state, int x, int y) {
-    int xres = glutGet(GLUT_WINDOW_WIDTH);
-    int yres = glutGet(GLUT_WINDOW_HEIGHT);
-    float fx = 2.0 * ((float)x / (float)xres - 0.5);
-    float fy = 2.0 * ((float)y / (float)yres - 0.5);
-
-    if(which_bn == 1) {
-        cx += (fx - px) * scale / 2.0;
-        cy -= (fy - py) * scale / 2.0;
-    } else if(which_bn == 0) {
-        scale *= (fy - py < 0.0) ? 1 - zoom_factor : 1 + zoom_factor;
-    }
-
-    px = fx;
-    py = fy;
-    draw();
+	draw();
 }
 
 void mouse_handler(int x, int y) {
