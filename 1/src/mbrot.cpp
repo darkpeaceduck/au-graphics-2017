@@ -146,15 +146,39 @@ float px, py;
 void bn_handler(int bn, int state, int x, int y) {
 	int xres = glutGet(GLUT_WINDOW_WIDTH);
 	int yres = glutGet(GLUT_WINDOW_HEIGHT);
+	float ppx = px;
+	float ppy = py;
 	px = 2.0 * ((float)x / (float)xres - 0.5);
 	py = 2.0 * ((float)y / (float)yres - 0.5);
 	which_bn = bn;
 
+
 	if(which_bn == 3) {
+	    float hx = -px * scale / 2.0;
+        float hy = py * scale / 2.0;
 		scale *= 1 - zoom_factor * 2.0;
+		float gx = -px * scale / 2.0;
+		float gy = py * scale / 2.0;
+		cx -= gx - hx;
+		cy -= gy - hy;
+//		cx = (px + cx) * zoom_factor- px;
+//		cy = (-py + cy) * zoom_factor + py;
+
+//		scale *= (ppy - py < 0.0) ? 1 - zoom_factor : 1 + zoom_factor;
 	} else if(which_bn == 4) {
-		scale *= 1 + zoom_factor * 2.0;;
+        float hx = -px * scale / 2.0;
+        float hy = py * scale / 2.0;
+		scale *= 1 + zoom_factor * 2.0;
+		float gx = -px * scale / 2.0;
+		        float gy = py * scale / 2.0;
+		        cx -= gx - hx;
+		        cy -= gy - hy;
+//		cx += -(px - ppx) * scale /2.0;
+//		cy -= -(py - ppy) * scale/2.0 ;
 	}
+
+
+
 	draw();
 }
 
@@ -168,7 +192,7 @@ void mouse_handler(int x, int y) {
 		cx += (fx - px) * scale / 2.0;
 		cy -= (fy - py) * scale / 2.0;
 	} else if(which_bn == 1) {
-		scale *= (fy - py < 0.0) ? 1 - zoom_factor : 1 + zoom_factor;
+//		scale *= (fy - py < 0.0) ? 1 - zoom_factor : 1 + zoom_factor;
 	}
 
 	px = fx;
