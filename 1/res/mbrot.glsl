@@ -7,7 +7,8 @@ uniform float rad;
 void main() {
 	vec2 z, c;
 
-	c.x = 1.3333 * (gl_TexCoord[0].x - 0.5) * scale - center.x;
+//	c.x = 1.3333 * (gl_TexCoord[0].x - 0.5) * scale - center.x;
+	c.x = (gl_TexCoord[0].x - 0.5) * scale - center.x;
 	c.y = (gl_TexCoord[0].y - 0.5) * scale - center.y;
 
 	int i;
