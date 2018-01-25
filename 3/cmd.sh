@@ -8,6 +8,11 @@ function build() {
     if [ -n "$1" ]; then
         BUILD_DIR=$1
     fi
+    git submodule update --init --recursive
+    cd lib/glfw
+    cmake .
+    make
+    cd ../..
     mkdir -p $BUILD_DIR
     cd $BUILD_DIR
     cmake ../
