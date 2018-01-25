@@ -7,8 +7,16 @@ find_package(OpenGL REQUIRED)
 find_library(Assimp_library NAMES assimp)
 #find_library(GLFW_library NAMES glfw)
 find_library(GLFW_library NAMES "glfw3" PATHS lib/glfw/src NO_DEFAULT_PATH)
-
 include_directories("lib/glfw/include")
+
+if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+    set(OPENGL_LIBRARY
+            ${OPENGL_LIBRARY}
+            -lGL -lGLU -lXrandr -lXext -lX11 -lrt
+            ${CMAKE_DL_LIBS}
+            ${GLFW_library}
+            )
+endif(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 
 
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
