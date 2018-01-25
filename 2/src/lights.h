@@ -70,12 +70,15 @@ class StaticLight : protected light{
     glm::mat4 lightSpaceMatrix;
     float nearPlane = 1.0f;
     float farPlane = 7.5f;
-public:
-    StaticLight() : light() {
-        pos =  glm::vec3(-2.0f, 4.0f, -1.0f);
+    void update() {
         lightProjection = glm::ortho(-10.0f, 10.0f, -10.0f, 10.0f, nearPlane, farPlane);
         lightView = glm::lookAt(pos, glm::vec3(0.0f), glm::vec3(0.0, 1, 0.0));
         lightSpaceMatrix = lightProjection * lightView;
+    }
+public:
+    StaticLight() : light() {
+        pos =  glm::vec3(-2.0f, 4.0f, -1.0f);
+        update();
     }
     void set_shader_depth_params(GLuint prog) {
         glUniformMatrix4fv(glGetUniformLocation(prog, "lightM"),
@@ -85,6 +88,14 @@ public:
         set_shader_depth_params(prog);
         glUniform3fv(glGetUniformLocation(prog, "lightPos"), 1, glm::value_ptr(pos));
     }
+    void addX(float delta) {
+        pos.x += delta;
+        update();
+    }
+    void addY(float delta) {
+            pos.y += delta;
+            update();
+     }
 };
 
 

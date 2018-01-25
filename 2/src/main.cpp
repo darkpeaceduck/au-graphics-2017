@@ -95,6 +95,7 @@ public:
    }
    void on_key(window *, int key) override {
        static float k = 0.05;
+       static float slight_delta = 0.2;
        switch (key) {
        case GLFW_KEY_W:
            camera.move(Camera::F, k);
@@ -108,6 +109,18 @@ public:
        case GLFW_KEY_D:
            camera.move(Camera::R, k);
              break;
+       case GLFW_KEY_B:
+                  slight.addX(slight_delta);
+                    break;
+       case GLFW_KEY_N:
+                         slight.addX(-slight_delta);
+                           break;
+       case GLFW_KEY_G:
+                  slight.addY(slight_delta);
+                    break;
+       case GLFW_KEY_H:
+                         slight.addY(-slight_delta);
+                           break;
 
        }
    }
