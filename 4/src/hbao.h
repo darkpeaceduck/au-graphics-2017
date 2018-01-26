@@ -5,7 +5,7 @@
 #include <iostream>
 
 #define RES_RATIO 2
-#define AO_RADIUS 4.0f
+#define AO_RADIUS 3.5f
 #define AO_DIRS 10
 #define AO_SAMPLES 30
 #define AO_STRENGTH 4;
