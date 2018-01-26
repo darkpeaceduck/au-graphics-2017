@@ -31,7 +31,8 @@ public:
 
 
 class bunny : protected material_obj {
-    static constexpr const char * bunny_m_path = "res/stanford-bunny.obj";
+//    static constexpr const char * bunny_m_path = "res/stanford-bunny.obj";
+    static constexpr const char * bunny_m_path = "res/sponza.obj";
     float speed;
 public:
     bunny() : material_obj(bunny_m_path) {
@@ -40,7 +41,7 @@ public:
         dif = glm::vec3(0.714f, 0.4284f, 0.18144f);
         spec = glm::vec3(0.393548f, 0.271906f, 0.166721f);
         pos = glm::vec3(0, 0.264f, 0);
-        model_scale = glm::vec3(0.001f);
+        model_scale = glm::vec3(0.0003f);
         speed = 2;
     }
     void draw(GLuint prog) {
