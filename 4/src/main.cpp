@@ -28,7 +28,7 @@ class scene : public windowH{
    StaticLight slight;
    DepthShadow dshadow;
    Camera camera = Camera(glm::vec3(-0.109187f, 0.621613f, 0.001249),
-           glm::vec3(0.0f, 1.0f, 0.0f), -176.600983f, -33.700012f);
+           glm::vec3(0.0f, 1.0f, 0.0f), -176.900879f, -34.599998f);
    hbao hb;
    int render_mode = 0;
 
@@ -162,7 +162,6 @@ public:
        controls.pY = (ypos);
 
        glm::vec3 pos = camera.getPosition();
-//       printf("%f %f %f\n", pos.x ,pos.y, pos.z);
    }
    void on_scroll(window*, double xoffset, double yoffset) override { }
    void framebuffer_size_callback(window*, int width, int height) override {   }

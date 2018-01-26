@@ -88,7 +88,6 @@ public:
        xangle   += xoff;
        yangle += yoff;
 
-       printf("%f %f\n", xangle, yangle);
 
        update();
    }
