@@ -79,6 +79,10 @@ class scene : public windowH{
                 window->getWidth() , window->getHeight(),
                 slight.getFOVRad(), slight.nearPlane,
                 slight.farPlane);
+//        hb.set_params(compose_prog,
+//                window->getWidth() , window->getHeight(),
+//                camera.getFov(), slight,
+//                slight.farPlane);
 
 
         glActiveTexture(GL_TEXTURE1);
@@ -98,6 +102,7 @@ class scene : public windowH{
 public:
 
    int draw(window * window) override {
+       slight.assignCamera(camera, window->getWidth(), window->getHeight());
        update(glfwGetTime());
 
        drawDepthShadowMap();

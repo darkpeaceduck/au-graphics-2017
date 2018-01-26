@@ -17,8 +17,7 @@ class Camera {
        float yangle;
        float _movementSpeed;
        float _mouseSensitivity;
-       float far;
-       float near;
+       ;
        float fov;
 
     void update() {
@@ -33,6 +32,8 @@ class Camera {
             _up    = glm::normalize(glm::cross(_right, _front));
     }
 public:
+    float far;
+           float near;
     enum Dir {
         F,
         B,

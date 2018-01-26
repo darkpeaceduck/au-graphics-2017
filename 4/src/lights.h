@@ -9,6 +9,7 @@
 #include <glm/gtc/type_ptr.hpp>
 
 #include "util.h"
+#include "camera.h"
 
 
 
@@ -92,6 +93,13 @@ public:
     }
     float getFOVRad() {
         return atanf(T / nearPlane) * 2.0f;
+    }
+    void assignCamera(Camera &c,
+            int width, int height) {
+        pos = c.getPosition();
+        lightView = c.getViewMatrix();
+        lightProjection = c.getPerspective(width, height);
+        lightSpaceMatrix = lightProjection * lightView;
     }
 };
 
