@@ -6,8 +6,8 @@
 
 #define RES_RATIO 2
 #define AO_RADIUS 4.0f
-#define AO_DIRS 6
-#define AO_SAMPLES 10
+#define AO_DIRS 10
+#define AO_SAMPLES 30
 #define AO_STRENGTH 4;
 #define AO_MAX_RADIUS_PIXELS 50.0
 #define NOISE_RES 1000
