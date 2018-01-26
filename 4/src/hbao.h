@@ -10,7 +10,7 @@
 #define AO_SAMPLES 10
 #define AO_STRENGTH 4;
 #define AO_MAX_RADIUS_PIXELS 50.0
-#define NOISE_RES 4
+#define NOISE_RES 1000
 class hbao {
     GLuint noiseTexture;
     float * noise;
