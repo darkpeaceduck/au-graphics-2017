@@ -28,7 +28,7 @@ class scene : public windowH{
    StaticLight slight;
    DepthShadow dshadow;
    Camera camera = Camera(glm::vec3(-0.109187f, 0.621613f, 0.001249),
-           glm::vec3(0.0f, 1.0f, 0.0f), -176.900879f, -34.599998f);
+           glm::vec3(0.0f, 1.0f, 0.0f), -2.500837f, -20.799982f);
    hbao hb;
    int render_mode = 0;
 
