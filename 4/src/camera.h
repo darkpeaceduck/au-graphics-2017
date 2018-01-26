@@ -5,6 +5,7 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <vector>
+#include <stdio.h>
 
 
 class Camera {
@@ -42,14 +43,16 @@ public:
     };
 
 
-    Camera(glm::vec3 position = glm::vec3(0.0f, 0.0f, 0.0f),
+    Camera(
+//            glm::vec3 position = glm::vec3(0.0f, 0.0f, 0.0f),
+            glm::vec3 position = glm::vec3(-0.109187f, 0.621613f, 0.001249),
            glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f), float yaw = -90.0f, float pitch = 0.0f)
             : _front(glm::vec3(0.0f, 0.0f, -1.0f))
             , _mouseSensitivity(0.1f)
             , _position(position)
             , _worldUp(up)
-            , xangle(-90.0f)
-            , yangle(0.0f)
+            , xangle(yaw)
+            , yangle(pitch)
             , near(0.1f)
             , far(100.0f)
             , fov(45.0f)
@@ -84,6 +87,8 @@ public:
 
        xangle   += xoff;
        yangle += yoff;
+
+       printf("%f %f\n", xangle, yangle);
 
        update();
    }

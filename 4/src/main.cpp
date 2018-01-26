@@ -27,7 +27,8 @@ class scene : public windowH{
    GLuint compose_prog;
    StaticLight slight;
    DepthShadow dshadow;
-   Camera camera = Camera (glm::vec3(0.0f, 1.5f, 5.0f));
+   Camera camera = Camera(glm::vec3(-0.109187f, 0.621613f, 0.001249),
+           glm::vec3(0.0f, 1.0f, 0.0f), -176.600983f, -33.700012f);
    hbao hb;
    int render_mode = 0;
 
@@ -159,6 +160,9 @@ public:
        camera.move2off(xoff, yoff);
        controls.pX = (xpos);
        controls.pY = (ypos);
+
+       glm::vec3 pos = camera.getPosition();
+//       printf("%f %f %f\n", pos.x ,pos.y, pos.z);
    }
    void on_scroll(window*, double xoffset, double yoffset) override { }
    void framebuffer_size_callback(window*, int width, int height) override {   }
