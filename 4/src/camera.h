@@ -6,6 +6,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <vector>
 #include <stdio.h>
+#include <iostream>
 
 
 class Camera {
@@ -88,6 +89,7 @@ public:
        xangle   += xoff;
        yangle += yoff;
 
+       std::cout << "Cam " << xangle << " " << yangle << std::endl;
 //       printf("%f %f\n", xangle, yangle);
 
 

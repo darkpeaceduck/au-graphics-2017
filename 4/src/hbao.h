@@ -11,9 +11,9 @@ class hbao {
     int AO_DIRS = 10;
     int AO_SAMPLES = 30;
     float RES_RATIO = 2;
-    float AO_RADIUS = 3.5f;
+    float AO_RADIUS = 70.0f;
     float AO_STRENGTH = 4;
-    float AO_MAX_RADIUS_PIXELS = 50.0;
+    float AO_MAX_RADIUS_PIXELS = 1000.0;
     GLuint noiseTexture;
     float * noise;
 
@@ -125,6 +125,11 @@ public:
     }
     void change_radius(float delta) {
         AO_RADIUS += delta;
+        std::cout << "AO_RADIUS " << AO_RADIUS << std::endl;
+    }
+    void change_max_radios_px(float delta) {
+        AO_MAX_RADIUS_PIXELS += delta;
+        std::cout << "AO_MAX_RADIUS_PIXELS " << AO_MAX_RADIUS_PIXELS << std::endl;
     }
 };
 

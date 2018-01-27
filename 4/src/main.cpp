@@ -28,7 +28,7 @@ class scene : public windowH{
    StaticLight slight;
    DepthShadow dshadow;
    Camera camera = Camera(glm::vec3(-0.109187f, 0.621613f, 0.001249),
-           glm::vec3(0.0f, 1.0f, 0.0f), -2.500837f, -20.799982f);
+           glm::vec3(0.0f, 1.0f, 0.0f), -2.10084f, -21.3f);
    hbao hb;
    int render_mode = 0;
 
@@ -169,6 +169,14 @@ public:
        case GLFW_KEY_L:
                         if (action == GLFW_PRESS)
                             hb.change_radius(-dr);
+                        break;
+       case GLFW_KEY_H:
+                 if (action == GLFW_PRESS)
+                     hb.change_max_radios_px(10);
+                 break;
+       case GLFW_KEY_J:
+                        if (action == GLFW_PRESS)
+                            hb.change_max_radios_px(-10);
                         break;
 
        }
