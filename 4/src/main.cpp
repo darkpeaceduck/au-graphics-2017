@@ -127,6 +127,7 @@ public:
    }
    void on_key(window *, int key, int action) override {
        static float k = 0.05;
+       float dr = 0.3;
        switch (key) {
        case GLFW_KEY_W:
            camera.move(Camera::F, k);
@@ -160,6 +161,14 @@ public:
        case GLFW_KEY_B:
                         if (action == GLFW_PRESS)
                             hb.change_samples(-1);
+                        break;
+       case GLFW_KEY_K:
+                 if (action == GLFW_PRESS)
+                     hb.change_radius(dr);
+                 break;
+       case GLFW_KEY_L:
+                        if (action == GLFW_PRESS)
+                            hb.change_radius(-dr);
                         break;
 
        }

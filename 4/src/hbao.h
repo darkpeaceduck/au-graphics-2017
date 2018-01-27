@@ -4,16 +4,16 @@
 #include <glm/gtc/random.hpp>
 #include <iostream>
 
-#define RES_RATIO 2
-#define AO_RADIUS 3.5f
 
 
-#define AO_STRENGTH 4;
-#define AO_MAX_RADIUS_PIXELS 50.0
 #define NOISE_RES 1000
 class hbao {
     int AO_DIRS = 10;
     int AO_SAMPLES = 30;
+    float RES_RATIO = 2;
+    float AO_RADIUS = 3.5f;
+    float AO_STRENGTH = 4;
+    float AO_MAX_RADIUS_PIXELS = 50.0;
     GLuint noiseTexture;
     float * noise;
 
@@ -122,6 +122,9 @@ public:
     }
     void change_samples(int delta) {
         AO_SAMPLES += delta;
+    }
+    void change_radius(float delta) {
+        AO_RADIUS += delta;
     }
 };
 
