@@ -153,6 +153,14 @@ public:
                         if (action == GLFW_PRESS)
                             hb.change_dirs(-1);
                         break;
+       case GLFW_KEY_V:
+                 if (action == GLFW_PRESS)
+                     hb.change_samples(1);
+                 break;
+       case GLFW_KEY_B:
+                        if (action == GLFW_PRESS)
+                            hb.change_samples(-1);
+                        break;
 
        }
    }
