@@ -145,6 +145,15 @@ public:
                change_mode();
            break;
 
+       case GLFW_KEY_Z:
+                 if (action == GLFW_PRESS)
+                     hb.change_dirs(1);
+                 break;
+       case GLFW_KEY_X:
+                        if (action == GLFW_PRESS)
+                            hb.change_dirs(-1);
+                        break;
+
        }
    }
    void on_mouse(window*, double xpos, double ypos) override {

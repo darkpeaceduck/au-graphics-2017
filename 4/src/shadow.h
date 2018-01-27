@@ -45,11 +45,11 @@ public:
         glViewport(0, 0, width, height);
         glBindFramebuffer(GL_FRAMEBUFFER, fb);
         glClear(GL_DEPTH_BUFFER_BIT);
-        glEnable(GL_POLYGON_OFFSET_FILL);
-        glPolygonOffset(1.0f, 1.0f);
+//        glEnable(GL_POLYGON_OFFSET_FILL);
+//        glPolygonOffset(1.0f, 1.0f);
     }
     void finish_draw() {
-        glDisable(GL_POLYGON_OFFSET_FILL);
+//        glDisable(GL_POLYGON_OFFSET_FILL);
         glBindFramebuffer(GL_FRAMEBUFFER, 0);
     }
     GLuint get_dmap() {

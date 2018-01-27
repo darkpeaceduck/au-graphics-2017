@@ -6,12 +6,13 @@
 
 #define RES_RATIO 2
 #define AO_RADIUS 3.5f
-#define AO_DIRS 10
+
 #define AO_SAMPLES 30
 #define AO_STRENGTH 4;
 #define AO_MAX_RADIUS_PIXELS 50.0
 #define NOISE_RES 1000
 class hbao {
+    int AO_DIRS = 10;
     GLuint noiseTexture;
     float * noise;
 
@@ -114,6 +115,9 @@ public:
     ~hbao() {
         glDeleteTextures(1, &noiseTexture);
         delete noise;
+    }
+    void change_dirs(int delta) {
+        AO_DIRS += delta;
     }
 };
 
