@@ -38,5 +38,20 @@
   **Links**:
   * [Task link (in russian) ](https://sites.google.com/site/cgcourseau2017autumn/tasks/task3)
   * [Implementation link](/3)
+  
+### 4. HBAO
+  Draw 3d scene with below requirements below.
+  
+  **Requirements**:
+   * shadow mapping
+   * PCF (soft shadows)
+   * [HBAO](http://developer.download.nvidia.com/presentations/2008/SIGGRAPH/HBAO_SIG08b.pdf)
+   * Support mode with only ambient occlusion rendering
+   
+   
+  **Links**:
+  * [Implementation link](/4)
+  
+ 
    
   
