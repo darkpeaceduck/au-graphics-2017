@@ -1,0 +1,7 @@
+include_directories(.)
+#add_executable(deferred mbrot.c sdr.c image_ppm.c)
+FILE(GLOB SRCFILES "*.cpp")
+add_executable(deferred  ${SRCFILES})
+include_directories( ${OPENGL_INCLUDE_DIRS} )
+#target_link_libraries(deferred ${OPENGL_LIBRARIES} ${GLFW_library} ${Assimp_library})
+target_link_libraries(deferred ${OPENGL_LIBRARY})

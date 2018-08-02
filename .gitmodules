@@ -4,4 +4,8 @@
 
 [submodule "2/lib/glfw"]
 	path = 2/lib/glfw
+	url = git@github.com:glfw/glfw.gi
+
+[submodule "3/lib/glfw"]
+	path = 3/lib/glfw
 	url = git@github.com:glfw/glfw.git
