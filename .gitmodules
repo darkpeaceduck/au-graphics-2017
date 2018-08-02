@@ -1,3 +1,7 @@
 [submodule "1/lib/glui"]
 	path = 1/lib/glui
 	url = git@github.com:libglui/glui.git
+
+[submodule "2/lib/glfw"]
+	path = 2/lib/glfw
+	url = git@github.com:glfw/glfw.git
