@@ -26,5 +26,17 @@
   **Links**:
   * [Task link (in russian) ](https://sites.google.com/site/cgcourseau2017autumn/tasks/task2)
   * [Implementation link](/2)
+
+### 3. Deferred
+  Draw 3d scene (landscape) with significant number of dynamic lights (without shadows) with diffirent params.
+  
+  **Requirements**:
+   * debug drawing every separate texture from gbuffer
+   * increase/decrease lights number
+   
+   
+  **Links**:
+  * [Task link (in russian) ](https://sites.google.com/site/cgcourseau2017autumn/tasks/task3)
+  * [Implementation link](/3)
    
   
